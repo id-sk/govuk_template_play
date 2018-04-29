@@ -57,7 +57,8 @@
         <div class="header-global">
           <div class="header-logo">
             <a href="@homepageUrl.getOrElse("https://www.gov.uk/")" title="@logoLinkTitle.getOrElse("Go to the GOV.UK homepage")" id="logo" class="content">
-              <img src="@routes.Template.at("images/gov.uk_logotype_crown_invert_trans.png")" width="36" height="32" alt=""> @globalHeaderText.getOrElse("GOV.UK")
+              <img src="@routes.Template.at("images/slovensko_sk_logo.png")" width="186"  alt="">
+              @globalHeaderText.getOrElse("GOV.UK")
             </a>
           </div>
           @insideHeader
@@ -73,25 +74,29 @@
 
     @content
 
-    <footer class="group js-footer" id="footer" role="contentinfo">
+    <div id="global-header-bar"></div>
+
+    <footer class="group js-footer with-logo" id="footer" role="contentinfo">
 
       <div class="footer-wrapper">
         @footerTop
 
         <div class="footer-meta">
-          <div class="footer-meta-inner">
-            @footerLinks
+          <div class="copyright">
+            <a href="#">
+              <img src="@routes.Template.at("images/ministry_logo.png")" title="Ministerstvo financií Slovenskej republiky" alt="Ministerstvo financií Slovenskej republiky" class="logo">
+            </a>
+          </div>
 
+          <div class="footer-meta-inner">
             <div class="open-government-licence">
               <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
               
                 @licenceMessage
               
-            </div>
-          </div>
 
-          <div class="copyright">
-            <a href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">@crownCopyrightMessage.getOrElse(Html("&copy; Crown copyright"))</a>
+              @footerLinks
+            </div>
           </div>
         </div>
       </div>
