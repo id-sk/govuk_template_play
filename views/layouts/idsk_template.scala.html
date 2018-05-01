@@ -76,28 +76,20 @@
 
     <div id="global-header-bar"></div>
 
-    <footer class="group js-footer with-logo" id="footer" role="contentinfo">
+    <footer class="group js-footer" id="footer" role="contentinfo">
 
       <div class="footer-wrapper">
         @footerTop
 
+        <div class="open-government-licence">
+          
+            @licenceMessage
+          
+          @footerLinks
+        </div>
+
         <div class="footer-meta">
-          <div class="copyright">
-            <a href="#">
-              <img src="@routes.Template.at("images/ministry_logo.png")" title="Ministerstvo financií Slovenskej republiky" alt="Ministerstvo financií Slovenskej republiky" class="logo">
-            </a>
-          </div>
-
-          <div class="footer-meta-inner">
-            <div class="open-government-licence">
-              <!-- <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p> -->
-              
-                @licenceMessage
-              
-
-              @footerLinks
-            </div>
-          </div>
+          <div class="copyright">@crownCopyrightMessage.getOrElse(Html("&copy; Crown copyright"))</div>
         </div>
       </div>
     </footer>
